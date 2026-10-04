@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
 <title>Cale Yarborough</title>
-<meta name="description" content="Cale Yarborough, producer. Executive producer of Gryphus Music Festival in the Texas Hill Country. Find the right people. Build the right room.">
+<meta name="description" content="Cale Yarborough, Founder and Principal of Maven Collective. Experiential strategy and production: EFC Rome 2025, Mr. Mercedes at Comic-Con, Twitch x Reddit at SXSW, IBM Cognitive Studio, Gryphus Music Festival.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Cale Yarborough, Producer">
-<meta property="og:description" content="Find the right people. Build the right room. Executive producer, Gryphus Music Festival.">
+<meta property="og:title" content="Cale Yarborough, Maven Collective">
+<meta property="og:description" content="Founder and Principal of Maven Collective. EFC Rome 2025, Mr. Mercedes at Comic-Con, Twitch x Reddit at SXSW, IBM Cognitive Studio, Gryphus Music Festival.">
 <meta property="og:image" content="art/ranch.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,16 +17,16 @@
 <style>
 /* Layout: one call sheet. A black header band like the top of a production document, then ruled sections in the order a crew reads them: who, the 2026 show, run of show, departments, credits, contacts. */
 :root{
-  --night:#0d0c0a; --sheet:#f3f1ec; --rule:#cfc9bd; --ink:#15130f; --sun:#f2b33d; --cedar:#2f4a37; --rust:#c2541f; --muted:#625b50; --card:#ffffff;
+  --night:#0d0c0a; --sheet:#f3f1ec; --rule:#cfc9bd; --ink:#15130f; --sun:#f2b33d; --cedar:#2f4a37; --rust:#c2541f; --rust-ink:#9a3b12; --muted:#625b50; --card:#ffffff;
   --display:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif;
   --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sheet:#17150f;--ink:#f3f1ec;--rule:#3b362c;--muted:#b8ae9d;--card:#1f1c16;color-scheme:dark}}
-:root[data-theme="dark"]{--sheet:#17150f;--ink:#f3f1ec;--rule:#3b362c;--muted:#b8ae9d;--card:#1f1c16;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sheet:#17150f;--ink:#f3f1ec;--rule:#3b362c;--muted:#b8ae9d;--card:#1f1c16;--rust-ink:#ea8a53;color-scheme:dark}}
+:root[data-theme="dark"]{--sheet:#17150f;--ink:#f3f1ec;--rule:#3b362c;--muted:#b8ae9d;--card:#1f1c16;--rust-ink:#ea8a53;color-scheme:dark}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:var(--barh,72px)}
 body{margin:0;background:var(--sheet);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -46,7 +46,7 @@ p{margin:0}
 .hero{border-bottom:3px solid var(--ink)}
 .callgrid{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:0 40px;padding-block:clamp(22px,4vh,40px) clamp(22px,4vh,36px);align-items:end}
 .who{display:grid;gap:16px;align-content:end}
-.sheetno{display:flex;gap:12px;align-items:center;font:600 13px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--rust)}
+.sheetno{display:flex;gap:12px;align-items:center;font:600 13px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--rust-ink)}
 .hero h1{font-size:clamp(58px,min(10vw,15vh),140px);font-weight:900}
 .hero h1 em{font-style:normal;color:var(--rust)}
 .hero .lede{font-size:clamp(17px,1.6vw,20px);max-width:46ch}
@@ -58,7 +58,7 @@ p{margin:0}
 .strip{margin:0;background:var(--night)}
 .strip img{width:100%;height:clamp(180px,34vh,360px);object-fit:cover}
 .strip figcaption{font-size:12px;color:#b8ae9d;padding-block:8px}
-@media (max-width:820px){.callgrid{grid-template-columns:1fr;gap:20px}.call{order:2}}
+@media (max-width:820px){.callgrid{grid-template-columns:1fr;gap:20px}.call{order:2}html{scroll-padding-top:var(--barh,120px)}}
 .sun{width:30px;height:26px;position:relative;display:inline-block;flex:none}
 .sun::before{content:"";position:absolute;inset:0;clip-path:polygon(50% 0,100% 100%,0 100%);background:var(--ink)}
 .sun::after{content:"";position:absolute;width:11px;height:11px;border-radius:50%;background:var(--sun);left:9.5px;top:11px}
@@ -72,7 +72,7 @@ p{margin:0}
 /* sheet sections */
 .sheet{padding-block:clamp(48px,7vw,88px)}
 .head{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;border-top:3px solid var(--ink);padding-top:14px;margin-bottom:26px}
-.head .mono{color:var(--rust);padding-top:6px}
+.head .mono{color:var(--rust-ink);padding-top:6px}
 .head h2{font-size:clamp(38px,6vw,72px)}
 .grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
 .field{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;padding-block:12px;border-bottom:1px solid var(--rule)}
@@ -103,16 +103,26 @@ tr.head2 td{background:#f2b33d1f}
 /* departments */
 .depts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
 .dept{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:20px;display:grid;gap:8px;align-content:start;background:var(--card)}
-.dept .mono{color:var(--rust)}
+.dept .mono{color:var(--rust-ink)}
 .dept h3{font-size:30px}
 .dept p{font-size:16px;color:var(--muted)}
 
+/* scenes: slug lines like a shooting script */
+.scenes{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:3px solid var(--ink)}
+.scenes li{display:grid;gap:8px;padding:22px 0 24px;border-bottom:1px solid var(--rule)}
+@media (min-width:900px){.scenes li{grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:40px;align-items:start}.scenes li>.slug,.scenes li>h3,.scenes li>.role{grid-column:1}.scenes li>p:not(.slug):not(.role){grid-column:2}.scenes li>.slug{grid-row:1}.scenes li>h3{grid-row:2}.scenes li>.role{grid-row:3}.scenes li>p:nth-of-type(3){grid-row:1 / span 2}.scenes li>.links{grid-row:3;align-self:end}}
+.scenes .slug{font:600 12px/1.5 var(--mono);letter-spacing:.08em;color:var(--rust-ink)}
+.scenes h3{font-size:clamp(30px,4vw,46px)}
+.scenes .role{font:600 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.scenes p{max-width:72ch}
+.scenes .links{display:flex;flex-wrap:wrap;gap:6px 18px;font-weight:600}
+.scenes .links a{color:var(--ink);text-underline-offset:4px}
 /* credits */
 .credits{display:grid;gap:0;border-top:1px solid var(--rule)}
 .credit{display:grid;grid-template-columns:120px minmax(0,1fr) minmax(0,1.3fr);gap:20px;padding-block:18px;border-bottom:1px solid var(--rule);align-items:baseline}
 .credit .mono{color:var(--muted)}
 .credit h3{font-size:28px}
-.credit .role{font:600 13px var(--mono);color:var(--rust);letter-spacing:.04em;margin-top:4px;text-transform:uppercase}
+.credit .role{font:600 13px var(--mono);color:var(--rust-ink);letter-spacing:.04em;margin-top:4px;text-transform:uppercase}
 
 /* contact */
 .contact{background:var(--night);color:#f3f1ec}
@@ -141,14 +151,15 @@ footer{background:var(--night);color:#8f8676;font-size:13px;padding-block:20px c
     <div class="who">
       <p class="sheetno"><span class="sun" aria-hidden="true"></span> Call sheet no. 1</p>
       <h1>Cale <em>Yarborough</em></h1>
-      <p class="lede">Find the right people for the right solution, then make it real. Live moments people remember, from SXSW launch nights to a festival in the Texas Hill Country.</p>
-      <div class="cta"><a class="btn" href="#contact">Start a conversation</a><a class="btn line" href="#show">See the 2026 show</a></div>
+      <p class="lede">From a VR escape room at Comic-Con to two nights in Rome. Bring Cale in when an idea needs a team, a plan and someone who sees it through.</p>
+      <div class="cta"><a class="btn" href="#contact">Start a conversation</a><a class="btn line" href="#scenes">See the work</a></div>
       <p class="gifted">A gift concept from Gordon's team, built from Cale's own words, his 2027 mark and Gordon's photograph of the 2026 schedule.</p>
     </div>
     <dl class="call">
-      <div><dt>Role</dt><dd>Executive Producer, Gryphus Music Festival</dd></div>
+      <div><dt>Role</dt><dd>Founder &amp; Principal, <a href="https://www.linkedin.com/company/138004072/">Maven Collective</a>, since March 2026</dd></div>
+      <div><dt>Also</dt><dd>Executive Producer, Gryphus Music Festival</dd></div>
       <div><dt>Base</dt><dd>Texas</dd></div>
-      <div><dt>Status</dt><dd>Independent, building Gryphus year two</dd></div>
+      <div><dt>Practice</dt><dd>Strategy-led, experience-driven: strategy, creative direction, design, production, fabrication and operations</dd></div>
       <div><dt>Next call</dt><dd>Gryphus 2027: April 29, San Antonio; April 30 to May 2, Flat Rock Ranch</dd></div>
       <div><dt>Sound</dt><dd><button class="chip" type="button" id="groove" aria-pressed="false">Groove off</button></dd></div>
     </dl>
@@ -163,8 +174,34 @@ footer{background:var(--night);color:#8f8676;font-size:13px;padding-block:20px c
   <p>Great brand experiences are built by collectives, not org charts. The work starts with the brief and ends with a moment audiences can feel, and the throughline is the same every time: find the right people for the right solution, then make it real.</p>
 </section>
 
+<section class="sheet wrap" id="scenes" data-note="Scenes">
+  <div class="head"><p class="mono">02 Scenes</p><h2>Selected work</h2></div>
+  <ol class="scenes">
+    <li><p class="slug">SC 01 / INT. VILLA MIANI / EXT. TERME DI CARACALLA, ROME. NIGHT. / 2025</p>
+      <h3>EFC Rome 2025</h3><p class="role">Lead producer for The Friedkin Group</p>
+      <p>Two nights around the 2025 European Club Association General Assembly. Cale led partner selection, strategy, creative development and end-to-end production: the opening at Villa Miani, where the new European Football Clubs identity was revealed, and the closing at the Baths of Caracalla with Damiano David. Event delivery by STS Communication; lighting design by Sergio Cattaneo.</p>
+      <p class="links"><a href="https://www.efcfootball.com/en/news/we-are-efc">EFC launch</a><a href="https://glp.de/en/news/news-stories/90-glp-impression-x5-ip-maxx-light-the-baths-of-caracalla-at-the-general-assembly-of-the-european-football-clubs-in-rome">The production, by GLP</a><a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDc2OTM3NjI0MDg5MTAw">Cale's Rome highlight</a></p></li>
+    <li><p class="slug">SC 02 / INT. SAN DIEGO COMIC-CON. THE MR. MERCEDES SET. / JULY 2018</p>
+      <h3>Mr. Mercedes Immersive Experience</h3><p class="role">Executive producer at Alchemy</p>
+      <p>A VR escape room, a custom AR adventure and a 6,000-plus square foot set built with the show's real props. The project, by Double A Labs for AT&amp;T Audience Network, was an Adweek Experiential Awards finalist (2019).</p>
+      <p class="links"><a href="https://www.adweek.com/creativity/adweek-announces-finalists-in-its-inaugural-adweek-experiential-awards/">Adweek finalists</a></p></li>
+    <li><p class="slug">SC 03 / INT. THE RIO, AUSTIN. SXSW. / MARCH 2017</p>
+      <h3>Twitch x Reddit IRL</h3><p class="role">Producer at Alchemy</p>
+      <p>Four days of music, gaming, AMAs and livestreams. Cale produced the venue, talent, experience, staging, AV, security, livestream and sponsors. Artists on the program included Snoop Dogg, Grandmaster Flash and A$AP Mob.</p>
+      <p class="links"><a href="https://blog.twitch.tv/en/2017/03/10/twitch-and-reddit-join-forces-for-sxsw-4af57ee66419/">Twitch announcement</a><a href="https://redditinc.com/news/reddits-heading-to-sxsw">Reddit announcement</a></p></li>
+    <li><p class="slug">SC 04 / INT. IBM COGNITIVE STUDIO, AUSTIN. SXSW. / 2016</p>
+      <h3>IBM Cognitive Studio</h3><p class="role">Producer at George P. Johnson, for IBM</p>
+      <p>A restaurant turned into nine places to meet Watson: apps, games, VR cycling and mixology. 9,210 visitors, reported by GPJ.</p>
+      <p class="links"><a href="https://www.gpj.com/case-study/the-ibm-cognitive-studio-at-sxsw/">GPJ case study</a></p></li>
+    <li><p class="slug">SC 05 / EXT. FLAT ROCK RANCH, COMFORT, TEXAS. DAY. / APRIL 2026</p>
+      <h3>Gryphus Music Festival</h3><p class="role">Executive Producer</p>
+      <p>Nine acts, ten sets, three days in the Hill Country. Next call: April 29, 2027 in San Antonio, then April 30 to May 2 at Flat Rock Ranch.</p>
+      <p class="links"><a href="#show">The 2026 show sheet</a></p></li>
+  </ol>
+</section>
+
 <section class="sheet wrap" id="show" style="padding-top:0" data-note="Gryphus show sheet">
-  <div class="head"><p class="mono">02 The 2026 show</p><h2>Gryphus Music Festival</h2></div>
+  <div class="head"><p class="mono">03 The 2026 show</p><h2>Gryphus Music Festival</h2></div>
   <div class="show">
     <div>
       <div class="field"><span class="mono">Role</span><span><b>Executive Producer</b></span></div>
@@ -209,7 +246,7 @@ footer{background:var(--night);color:#8f8676;font-size:13px;padding-block:20px c
 </section>
 
 <section class="sheet wrap" style="padding-top:0" data-note="Departments">
-  <div class="head"><p class="mono">03 Departments</p><h2>What gets made</h2></div>
+  <div class="head"><p class="mono">04 Departments</p><h2>What gets made</h2></div>
   <div class="depts">
     <article class="dept"><p class="mono">Dept 01</p><h3>Festival production</h3><p>Multi-day live music with camping, food, ops and a community ethos. Site plan through artist relations through teardown.</p></article>
     <article class="dept"><p class="mono">Dept 02</p><h3>Brand activations</h3><p>Launches, takeovers, conference experiences and sponsor moments that make people stop, share and remember.</p></article>
@@ -218,14 +255,21 @@ footer{background:var(--night);color:#8f8676;font-size:13px;padding-block:20px c
   </div>
 </section>
 
-<section class="sheet wrap" style="padding-top:0" data-note="Credits">
-  <div class="head"><p class="mono">04 Credits</p><h2>Shows that ran</h2></div>
+<section class="sheet wrap" style="padding-top:0" data-note="Crew history">
+  <div class="head"><p class="mono">05 Crew history</p><h2>Where he has worked</h2></div>
   <div class="credits">
-    <div class="credit"><span class="mono">2026, now</span><div><h3>Gryphus Music Festival</h3><p class="role">Executive Producer, Comfort, TX</p></div><p>A three-day Hill Country festival of live music, camping, trails and food. Year one was the public unveiling of a community that started as an invitation-only ranch party.</p></div>
-    <div class="credit"><span class="mono">2020s</span><div><h3>The Friedkin Group</h3><p class="role">Special Projects, Houston, TX</p></div><p>Special-projects work across a portfolio spanning sport and hospitality, where the brief was usually "figure out how to make this real."</p></div>
-    <div class="credit"><span class="mono">SXSW</span><div><h3>WAVE XR launch</h3><p class="role">Executive Producer, Austin, TX</p></div><p>The launch event for Wave, interactive virtual concerts at the moment XR was finding its first real audience.</p></div>
-    <div class="credit"><span class="mono">2010s</span><div><h3>Forefront Networks</h3><p class="role">VP, Experiential Services</p></div><p>Leading an experiential practice building branded live programs across tech, music and consumer categories.</p></div>
+    <div class="credit"><span class="mono">2026 to now</span><div><h3>Maven Collective</h3><p class="role">Founder &amp; Principal</p></div><p></p></div>
+    <div class="credit"><span class="mono">2023 to 2026</span><div><h3>The Friedkin Group</h3><p class="role">Senior Manager, Special Projects; then Director of Operations</p></div><p>EFC Rome 2025, among special projects</p></div>
+    <div class="credit"><span class="mono">2022 to 2023</span><div><h3>Forefront Networks</h3><p class="role">VP, Experiential Services</p></div><p>Selected programs from his portfolio: Austin Trail of Lights, UT Bevo Blvd., Austin Gamblers Fan Fest, Live in the Vineyard, Elevation Beaver Creek, Saucony House, Lucchese</p></div>
+    <div class="credit"><span class="mono">2021 to 2022</span><div><h3>PRA</h3><p class="role">Regional Director of Events</p></div><p></p></div>
+    <div class="credit"><span class="mono">2017 to 2021</span><div><h3>Alchemy</h3><p class="role">Senior Producer</p></div><p>Mr. Mercedes at Comic-Con; Twitch x Reddit IRL at SXSW</p></div>
+    <div class="credit"><span class="mono">2014 to 2017</span><div><h3>George P. Johnson</h3><p class="role">Producer, Integrated Experience Marketing</p></div><p>IBM Cognitive Studio at SXSW; <a href="https://www.gpj.com/case-study/tedibm/">TED@IBM</a> (October 2015)</p></div>
+    <div class="credit"><span class="mono">2012 to 2014</span><div><h3>Qples</h3><p class="role">Director of Marketing and Events</p></div><p>Led the app's UX and UI concept and development through launch, and built the customer support function</p></div>
+    <div class="credit"><span class="mono">2009 to 2012</span><div><h3>Canonball Creative</h3><p class="role">Head of Projects and Client Services</p></div><p></p></div>
+    <div class="credit"><span class="mono">2005 to 2008</span><div><h3>Gulf States Toyota</h3><p class="role">Events and Marketing Manager</p></div><p>Regional experiential programs across five states</p></div>
+    <div class="credit"><span class="mono">SXSW</span><div><h3>WAVE XR launch</h3><p class="role">Executive Producer</p></div><p>Year not confirmed</p></div>
   </div>
+  <p class="note" style="margin-top:12px">Career credits draw on <a href="https://www.linkedin.com/in/caleyarborough/">Cale's public profile</a> and Gordon's firsthand knowledge. Project facts link their own sources; company outcomes are the companies'.</p>
 </section>
 </main>
 
@@ -236,11 +280,10 @@ footer{background:var(--night);color:#8f8676;font-size:13px;padding-block:20px c
       <a href="mailto:cale@yarborough.me"><span class="mono">Email</span><span>cale@yarborough.me</span></a>
       <a href="tel:+12147629224"><span class="mono">Direct</span><span>214, 762, 9224</span></a>
       <div><span class="mono">Best first step</span><span>A 15-minute call</span></div>
-      <a href="cale-yarborough-one-sheet.pdf"><span class="mono">One-sheet</span><span>Download the PDF</span></a>
     </div>
   </div>
 </section>
-<footer><div class="wrap">© 2026 Cale Yarborough, Texas to anywhere live, Illustrative Hill Country scenes made with Higgsfield (not event photography); groove by ElevenLabs.</div></footer>
+<footer><div class="wrap">© 2026 Cale Yarborough, Texas to anywhere live, Illustrative Hill Country scene made with Higgsfield (not event photography); roles and dates from Cale's public LinkedIn profile; groove by ElevenLabs.</div></footer>
 
 <audio id="g" src="audio/groove.mp3" loop preload="none"></audio>
 <script>
@@ -249,6 +292,7 @@ b.addEventListener('click',function(){if(a.paused){a.volume=.4;a.play().then(fun
 document.addEventListener('visibilitychange',function(){if(document.hidden&&!a.paused){a.pause();b.textContent='Groove off';b.setAttribute('aria-pressed','false')}});})();
 </script>
 <script>window.NOTES_CONFIG={site:"cale-a",who:"Cale",title:"Cale site, Version A: The Call Sheet",version:"A · The Call Sheet",label:"Notes for Gordon"};</script>
+<script>(function(){var b=document.querySelector('.cmp');if(!b)return;function m(){document.documentElement.style.setProperty('--barh',(b.getBoundingClientRect().height+12)+'px')}m();addEventListener('resize',m)})();</script>
 <script src="notes.js"></script>
 </body>
 </html>
