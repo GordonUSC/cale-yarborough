@@ -11,6 +11,9 @@
   var css = document.createElement('style');
   css.textContent = [
     'html:not(.nf-on) .nf-bar{display:none!important}',
+    '.nf-dock.nf-dock-inline{position:static;margin:18px 0 0;flex-wrap:wrap}',
+    '.nf-dock-inline .nf-fab{box-shadow:none;border:1px solid currentColor;background:transparent;color:inherit}',
+    '.nf-dock-inline .nf-fab[aria-pressed="true"]{background:#ffd166;color:#111;border-color:#ffd166}',
     '.nf-dock{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px}',
     '.nf-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:22px 0 0;padding:10px 12px;border:1px dashed currentColor;border-radius:14px;opacity:.92;font:600 14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif}',
     '.nf-bar b{font-weight:800;margin-right:4px}',
@@ -68,7 +71,10 @@
   sw.addEventListener('click', function () { setMode(!document.documentElement.classList.contains('nf-on')); });
   var panel = document.createElement('div');
   panel.className = 'nf-panel'; panel.hidden = true; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Your notes');
-  document.body.appendChild(dock); document.body.appendChild(panel);
+  /* A page may offer the opt-in in its footer instead of a floating button: <div data-notes-dock></div> */
+  var mount = document.querySelector('[data-notes-dock]');
+  if (mount) { dock.classList.add('nf-dock-inline'); mount.appendChild(dock); } else document.body.appendChild(dock);
+  document.body.appendChild(panel);
 
   function text() {
     var lines = [(cfg.title || document.title) + ': notes from ' + (data._who || 'a reviewer')];
