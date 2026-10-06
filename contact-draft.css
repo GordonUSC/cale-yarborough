@@ -1,0 +1,11 @@
+/* A readable email starter when a mail app is not configured. */
+.contact-draft{margin-top:20px;font-size:14px;max-width:100%}
+.contact-draft summary{cursor:pointer;min-height:44px;display:flex;align-items:center;text-decoration:underline;text-underline-offset:4px}
+.contact-draft label{display:block!important;padding:12px 0 6px!important;border:0!important;font-size:14px!important}
+.contact-draft textarea{display:block;width:100%;max-width:100%;min-height:240px;resize:vertical;padding:12px;border:1px solid currentColor;border-radius:0;background:#fff;color:#182b40;font:400 15px/1.5 var(--type,var(--font,Arial,sans-serif));box-sizing:border-box}
+.contact-draft button{margin-top:10px;min-height:44px;padding:10px 16px;border:1px solid currentColor;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.contact-draft p{font-size:13px;margin-top:10px}
+.contact-draft :focus-visible{outline:3px solid currentColor;outline-offset:4px}
+
+.contact-draft summary::after{content:"+";margin-left:auto;padding-left:16px}
+.contact-draft[open] summary::after{content:"−"}

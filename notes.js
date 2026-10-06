@@ -64,13 +64,13 @@
   var sw = document.createElement('button');
   sw.type = 'button'; sw.className = 'nf-fab'; sw.setAttribute('aria-pressed', 'false'); sw.textContent = 'Leave notes';
   var fab = document.createElement('button');
-  fab.type = 'button'; fab.className = 'nf-fab nf-send'; fab.setAttribute('aria-expanded', 'false');
+  fab.type = 'button'; fab.className = 'nf-fab nf-send'; fab.setAttribute('aria-expanded', 'false'); fab.setAttribute('aria-controls', 'nf-panel');
   fab.innerHTML = 'Send notes<i id="nf-count">0</i>';
   dock.appendChild(sw); dock.appendChild(fab);
   function setMode(on) { document.documentElement.classList.toggle('nf-on', on); sw.setAttribute('aria-pressed', on); sw.textContent = on ? 'Notes on' : 'Leave notes'; if (!on && !panel.hidden) toggle(); }
   sw.addEventListener('click', function () { setMode(!document.documentElement.classList.contains('nf-on')); });
   var panel = document.createElement('div');
-  panel.className = 'nf-panel'; panel.hidden = true; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Your notes');
+  panel.id = 'nf-panel'; panel.className = 'nf-panel'; panel.hidden = true; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Your notes');
   /* A page may offer the opt-in in its footer instead of a floating button: <div data-notes-dock></div> */
   var mount = document.querySelector('[data-notes-dock]');
   if (mount) { dock.classList.add('nf-dock-inline'); mount.appendChild(dock); } else document.body.appendChild(dock);
@@ -112,7 +112,7 @@
     panel.querySelector('#nf-close').addEventListener('click', toggle);
     refresh();
   }
-  function toggle() { var open = panel.hidden; if (open) render(); panel.hidden = !open; fab.setAttribute('aria-expanded', open); }
+  function toggle() { var open = panel.hidden; if (open) render(); panel.hidden = !open; fab.setAttribute('aria-expanded', open); if (open) panel.querySelector('#nf-who').focus(); else (document.documentElement.classList.contains('nf-on') ? fab : sw).focus(); }
   fab.addEventListener('click', toggle);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) toggle(); });
   paintCount();
