@@ -1,7 +1,7 @@
 (() => {
   const looks = {
-    diaries: {label:'B / Pizza Baby Diaries', image:'assets/pizza-diaries.webp', alt:'Illustrated pizza kingdom with a pink polka-dot pony and cowgirl pizza slices.', caption:'Blush, olive & a little cowgirl mischief.', name:'Pizza Baby Diaries', hash:'diaries'},
-    press: {label:'A / Box Press', image:'assets/pizza-press.webp', alt:'A concept illustration of a pizza slice wrapped like a newborn in a striped blanket.', caption:'Tomato red. Big opinions. Born a meme.', name:'Box Press', hash:'boxpress'}
+    diaries: {label:'B / Pizza Baby Diaries', image:'assets/pizza-diaries.webp', alt:'Illustrated pizza kingdom with a pink polka-dot pony and cowgirl pizza slices.', caption:'Blush, olive & a little cowgirl mischief.', name:'Pizza Baby Diaries', path:'diaries/index.html#diaries'},
+    press: {label:'A / Counter Press', image:'assets/pizza-press.webp', alt:'A concept illustration of a pizza slice wrapped like a newborn in a striped blanket.', caption:'Tomato red. Big opinions. Born a meme.', name:'Counter Press', path:'index.html#boxpress'}
   };
   const choices = document.querySelectorAll('[data-pizza]');
   choices.forEach(button => button.addEventListener('click', () => {
@@ -13,7 +13,7 @@
     document.querySelector('#pizza-caption').textContent = look.caption;
     document.querySelector('#pizza-note').textContent = `Previewing ${look.name}. The site opens in this look.`;
     const link = document.querySelector('#pizza-open');
-    link.href = 'https://gordonusc.github.io/pizza-baby/#' + look.hash;
+    link.href = 'https://gordonusc.github.io/pizza-baby/' + look.path;
     link.textContent = 'Explore ' + look.name + ' ↗';
   }));
   document.querySelector('#copy-link').addEventListener('click', async () => {
